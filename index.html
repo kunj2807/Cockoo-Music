@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuckoo - your favourite music is hear</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" style="position:sticky ;top: 0;">
+        <div class="container-fluid">
+        <img class='logo'src="logo.png" alt="">
+          <a class="navbar-brand" href="#">Cockoo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </div>
+        </div>
+      </nav>
+      <div class="container my-3">
+          <div class="songlist">
+            <h2>Top Songs</h2>
+            <div class="songitem my-2">
+                <img alt="1">
+                <span class=songName></span>
+                <span class="listPlay"><span>03:43</span></span>
+                <span><i id ="0"class="fa-solid fa-circle-play songItemPlay"></i></span>
+            
+            </div>
+            <div class="songitem my-2">
+                <img alt="2">
+                <span class=songName></span>
+                <span class="listPlay"><span>04:04</span></span>
+                <span><i id ="1"class="fa-solid fa-circle-play songItemPlay"></i></span>
+            </a>
+            </div>
+            <div class="songitem my-2">
+                <img alt="3">
+                <span class=songName></span>
+                <span class="listPlay"><span>03:51</span></span>
+                <span><i id ="2"class="fa-solid fa-circle-play songItemPlay"></i></span>
+            
+            </div>
+            <div class="songitem my-2">
+                <img alt="4">
+                <span class=songName></span>
+                <span class="listPlay"><span>03:54</span></span>
+                <span><i id ="3"class="fa-solid fa-circle-play songItemPlay"></i></span>
+            
+            </div>
+           
+            <div class="songitem my-2">
+                <img alt="5">
+                <span class=songName></span>
+                <span class="listPlay"><span>03:11</span></span>
+                <span><i id ="4"class="fa-solid fa-circle-play songItemPlay"></i></span>
+            
+            </div>
+            <div class="songitem my-2">
+                <img alt="6">
+                <span class=songName></span>
+                <span class="listPlay"><span>04:05</span></span>
+                <span><i id ="5"class="fa-solid fa-circle-play songItemPlay"></i></span>
+            </div>
+            <div class="songitem my-2">
+                <img alt="7">
+                <span class=songName></span>
+                <span class="listPlay"><span>02:59</span></span>
+                <span><i id ="6"class="fa-solid fa-circle-play songItemPlay"></i></span>
+            </div>
+            <div class="songitem my-2">
+                <img alt="8">
+                <span class=songName></span>
+                <span class="listPlay"><span>04:09</span></span>
+                <span><i id ="7"class="fa-solid fa-circle-play songItemPlay"></i></span>
+            </div>
+        </div>
+        <div class="songbanner">
+            <img alt="" id="img">
+        </div>
+    </div>
+    <div class="bottom">
+        <input type="range" name='range' value="0" id="myProgress" min="0" max="100">
+        <div class="icons">
+            <i class="fa-solid fa-backward-step fa-2x " id="previous"></i>
+            <i class="fa-solid fa-circle-play fa-2x" id="masterPlay"></i>
+            <i class="fa-solid fa-forward-step fa-2x" id="next"></i>
+        </div>
+        <div class="songInfo">
+            <img src="playing.gif" id='playingGif'width="50px" alt="">
+            <span id="sName">Song name</span>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/3cecadf563.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>

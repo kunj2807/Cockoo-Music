@@ -1,0 +1,164 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: fixed;
+    top: 0;
+    background: white;
+    box-shadow: 0px 0px 10px 1px black;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+    margin-right: 20px;
+}
+.container{
+    min-height: 80vh;
+    background: url(background.jpg) no-repeat center center/cover;
+    border-radius: 15px;
+
+}
+.container h2{
+    text-align: center;
+}
+
+.bottom{
+    position: sticky;
+    bottom: 0;
+    height: 90px;
+    background-color:rgba(0, 0, 0, 0.779);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.icons{
+    margin: 10px 0px;
+    cursor: pointer;
+}
+.icons i{
+    padding: 0px 10px;
+}
+#myProgress{
+    width: 80vw;
+    cursor: pointer;
+
+}
+.songitem a{
+    text-decoration: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 0;
+}
+.songitem a:visited{
+    color: white;
+}
+.songitem{
+    padding: 2px 10px;
+    height: 40px;
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(50, 49, 49);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 1px white;
+    transition: all 0.8s;
+    cursor: pointer;
+
+}
+.songbanner{
+    position: absolute;
+    top: 140px;
+    right: 200px;
+}
+.songbanner img{
+    height: 320px;
+    width: 320px;
+    opacity: 0.9;
+    border-radius: 20px;
+}
+.songName{
+    width: 30%;
+    text-align: center;
+    
+}
+.songitem img{
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 1px 1px skyblue;
+}
+.songitem:hover{
+    transform: translate(50px,0px);
+}
+.songitem i{
+  cursor: pointer;
+}
+.songInfo{
+    position: absolute;
+    left: 10vw;
+}
+.songInfo img{
+    opacity: 0;
+    transition: opacity 1s ease-in
+}
+#sName{
+    padding-left: 10vh;
+}
+@media (max-width:999px) and (min-width:532px)
+{
+    .songitem{
+        width: 50%;
+    }
+    .songInfo{
+        position: absolute;
+        left: 5vw;
+    }
+    #sName{
+        padding-left: 5vh;
+    }
+}
+@media (max-width:532px) and (min-width:300px)
+{
+    .songitem{
+        width: 90%;
+    }
+    .songInfo{
+        left:0 ;
+    }
+    #sName{
+        position: relative;
+        right: 46px;
+        padding-left: 0px;
+    }
+    .songInfo img{
+        position: relative;
+        top: 21px;
+        left: 12px;
+    }
+}
+@media (max-width:320px){
+    #sName{
+        position: relative;
+        right:70px;
+        padding-left: 0px;
+    }
+    .songitem{
+        width: 100%;
+    }
+    .songInfo img{
+        position: relative;
+        top: 21px;
+        left: -14px;
+    }
+
+}
+
