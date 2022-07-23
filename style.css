@@ -4,6 +4,7 @@
     padding: 0;
 }
 .navbar{
+    z-index: 100;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     position: fixed;
     top: 0;
@@ -113,6 +114,20 @@
 #sName{
     padding-left: 10vh;
 }
+.poster-box{
+    display: inline-block;
+    position: absolute;
+    bottom: 2vh;
+    right: 20vw;
+    display: none;
+}
+
+#poster{
+    height: 40px;
+    width: 40px;
+    border-radius: 15px;
+}
+
 @media (max-width:999px) and (min-width:532px)
 {
     .songitem{
@@ -127,6 +142,9 @@
     }
     .songbanner{
         display: none;
+    }
+    .poster-box{
+        display: block;
     }
 }
 @media (max-width:532px) and (min-width:300px)
@@ -150,6 +168,10 @@
     .songbanner{
         display: none;
     }
+    .poster-box{
+        display: block;
+        right: 10vw;
+    }
 }
 @media (max-width:320px){
     #sName{
@@ -167,6 +189,10 @@
     }
     .songbanner{
         display: none;
+    }
+    .poster-box{
+        display: block;
+        right: 5vw;
     }
 
 }

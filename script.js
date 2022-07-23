@@ -15,6 +15,7 @@ let songs=[
 ]
 document.getElementById('sName').innerText=`${songs[songIndex].songName}`
 document.getElementById('img').src=`${songs[songIndex].coverPath}`
+document.getElementById('poster').src=`${songs[songIndex].coverPath}`
 
 
 
@@ -62,12 +63,13 @@ audioElement.addEventListener('timeupdate',()=>{
     myProgress.value=progress
     if(progress==100){
         songIndex+=1
-        console.log(songIndex)
+
         audioElement.src=`songs/${songIndex+1}.mp3`
         audioElement.play()
         makeAllPlays()
         document.getElementById('sName').innerText=`${songs[songIndex].songName}`
         document.getElementById('img').src=`covers/${songIndex+1}.jpg`
+        document.getElementById('poster').src=`${songs[songIndex].coverPath}`
         document.getElementById(`${songIndex}`).classList.remove('fa-circle-play')
         document.getElementById(`${songIndex}`).classList.add('fa-circle-pause')
     }
@@ -83,25 +85,24 @@ function makeAllPlays(){
         element.classList.add('fa-circle-play')
     })
 }
-Array.from(document.getElementsByClassName('songItemPlay')).forEach( (element)=>{
-    element.addEventListener('click',(e)=>{
-        makeAllPlays()
-        songIndex=parseInt(e.target.id)
-        audioElement.src=`songs/${songIndex+1}.mp3`
-        audioElement.currentTime=0
-        e.target.classList.remove('fa-circle-play')
-        e.target.classList.add('fa-circle-pause')
-        masterPlay.classList.remove('fa-circle-play')
-        masterPlay.classList.add('fa-circle-pause')
-        audioElement.play()
-        document.getElementById('sName').innerText=`${songs[songIndex].songName}`
-        document.getElementById('img').src=`covers/${songIndex}.jpg`
+// Array.from(document.getElementsByClassName('songItemPlay')).forEach( (element)=>{
+//     element.addEventListener('click',(e)=>{
+//         makeAllPlays()
+//         songIndex=parseInt(e.target.id)
+//         audioElement.src=`songs/${songIndex+1}.mp3`
+//         audioElement.currentTime=0
+//         e.target.classList.remove('fa-circle-play')
+//         e.target.classList.add('fa-circle-pause')
+//         masterPlay.classList.remove('fa-circle-play')
+//         masterPlay.classList.add('fa-circle-pause')
+//         audioElement.play()
+//         document.getElementById('sName').innerText=`${songs[songIndex].songName}`
+//         document.getElementById('img').src=`covers/${songIndex}.jpg`
         
-    })
+//     })
 
-})
+// })
 document.getElementById('next').addEventListener('click',()=>{
-    console.log('x')
     if(songIndex>=8){
         songIndex=1
     }
@@ -114,6 +115,7 @@ document.getElementById('next').addEventListener('click',()=>{
     audioElement.play()
     document.getElementById('sName').innerText=`${songs[songIndex].songName}`
     document.getElementById('img').src=`covers/${songIndex+1}.jpg`
+    document.getElementById('poster').src=`${songs[songIndex].coverPath}`
     masterPlay.classList.remove('fa-circle-play')
     masterPlay.classList.add('fa-circle-pause')
     document.getElementById(`${songIndex-1}`).classList.remove('fa-circle-play')
@@ -134,6 +136,7 @@ document.getElementById('previous').addEventListener('click',()=>{
     audioElement.play()
     document.getElementById('sName').innerText=`${songs[songIndex].songName}`
     document.getElementById('img').src=`covers/${songIndex+1}.jpg`
+    document.getElementById('poster').src=`${songs[songIndex].coverPath}`
     masterPlay.classList.remove('fa-circle-play')
     masterPlay.classList.add('fa-circle-pause')
     document.getElementById(`${songIndex}`).classList.remove('fa-circle-play')
@@ -145,11 +148,11 @@ Array.from(document.getElementsByClassName('songitem')).forEach((element,e)=>{
         element.getElementsByTagName('i')[0].classList.remove('fa-circle-play')
         element.getElementsByTagName('i')[0].classList.add('fa-circle-pause')
         songIndex=parseInt(e)
-        console.log(songIndex)
         audioElement.src=`songs/${songIndex+1}.mp3`
         audioElement.play()
         document.getElementById('sName').innerText=`${songs[songIndex].songName}`
         document.getElementById('img').src=`covers/${songIndex+1}.jpg`
+        document.getElementById('poster').src=`${songs[songIndex].coverPath}`
         masterPlay.classList.remove('fa-circle-play')
         masterPlay.classList.add('fa-circle-pause')
         document.getElementById('playingGif').style.opacity='1'
