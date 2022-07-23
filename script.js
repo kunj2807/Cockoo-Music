@@ -26,7 +26,7 @@ songitem.forEach((element,i) => {
 masterPlay.addEventListener('click',()=>{
     if(audioElement.paused || audioElement.currentTime<=0){
         audioElement.play()
-        document.getElementById('sName').innerText=`${songs[songIndex-1].songName}`
+        document.getElementById('sName').innerText=`${songs[songIndex].songName}`
         masterPlay.classList.remove('fa-circle-play')
         masterPlay.classList.add('fa-circle-pause')
         document.getElementById('playingGif').style.opacity='1'
@@ -61,16 +61,15 @@ audioElement.addEventListener('timeupdate',()=>{
     progress=parseInt((audioElement.currentTime/audioElement.duration)*100);
     myProgress.value=progress
     if(progress==100){
-        if(songIndex==0){songIndex+=1}
         songIndex+=1
         console.log(songIndex)
-        audioElement.src=`songs/${songIndex}.mp3`
+        audioElement.src=`songs/${songIndex+1}.mp3`
         audioElement.play()
         makeAllPlays()
-        document.getElementById('sName').innerText=`${songs[songIndex-1].songName}`
-        document.getElementById('img').src=`covers/${songIndex}.jpg`
-        document.getElementById(`${songIndex-1}`).classList.remove('fa-circle-play')
-        document.getElementById(`${songIndex-1}`).classList.add('fa-circle-pause')
+        document.getElementById('sName').innerText=`${songs[songIndex].songName}`
+        document.getElementById('img').src=`covers/${songIndex+1}.jpg`
+        document.getElementById(`${songIndex}`).classList.remove('fa-circle-play')
+        document.getElementById(`${songIndex}`).classList.add('fa-circle-pause')
     }
 })
 
@@ -106,18 +105,15 @@ document.getElementById('next').addEventListener('click',()=>{
     if(songIndex>=8){
         songIndex=1
     }
-    else if(songIndex==0){
-        songIndex=2
-    }
     else{
         songIndex+=1
     }
     makeAllPlays()
-    audioElement.src=`songs/${songIndex}.mp3`
+    audioElement.src=`songs/${songIndex+1}.mp3`
     audioElement.currentTime=0
     audioElement.play()
-    document.getElementById('sName').innerText=`${songs[songIndex-1].songName}`
-    document.getElementById('img').src=`covers/${songIndex}.jpg`
+    document.getElementById('sName').innerText=`${songs[songIndex].songName}`
+    document.getElementById('img').src=`covers/${songIndex+1}.jpg`
     masterPlay.classList.remove('fa-circle-play')
     masterPlay.classList.add('fa-circle-pause')
     document.getElementById(`${songIndex-1}`).classList.remove('fa-circle-play')
@@ -126,22 +122,22 @@ document.getElementById('next').addEventListener('click',()=>{
 })
 document.getElementById('previous').addEventListener('click',()=>{
 
-    if(songIndex<=1){
-        songIndex=8
+    if(songIndex<=0){
+        songIndex=7
     }
     else{
         songIndex-=1
     }
     makeAllPlays()
-    audioElement.src=`songs/${songIndex}.mp3`
+    audioElement.src=`songs/${songIndex+1}.mp3`
     audioElement.currentTime=0
     audioElement.play()
-    document.getElementById('sName').innerText=`${songs[songIndex-1].songName}`
-    document.getElementById('img').src=`covers/${songIndex}.jpg`
+    document.getElementById('sName').innerText=`${songs[songIndex].songName}`
+    document.getElementById('img').src=`covers/${songIndex+1}.jpg`
     masterPlay.classList.remove('fa-circle-play')
     masterPlay.classList.add('fa-circle-pause')
-    document.getElementById(`${songIndex-1}`).classList.remove('fa-circle-play')
-    document.getElementById(`${songIndex-1}`).classList.add('fa-circle-pause')
+    document.getElementById(`${songIndex}`).classList.remove('fa-circle-play')
+    document.getElementById(`${songIndex}`).classList.add('fa-circle-pause')
 })
 Array.from(document.getElementsByClassName('songitem')).forEach((element,e)=>{
     element.addEventListener('click',()=>{
@@ -157,7 +153,7 @@ Array.from(document.getElementsByClassName('songitem')).forEach((element,e)=>{
         masterPlay.classList.remove('fa-circle-play')
         masterPlay.classList.add('fa-circle-pause')
         document.getElementById('playingGif').style.opacity='1'
-        songIndex+=1
+        // songIndex+=1
     })
 })
 
