@@ -125,6 +125,9 @@
     #sName{
         padding-left: 5vh;
     }
+    .songbanner{
+        display: none;
+    }
 }
 @media (max-width:532px) and (min-width:300px)
 {
@@ -144,6 +147,9 @@
         top: 21px;
         left: 12px;
     }
+    .songbanner{
+        display: none;
+    }
 }
 @media (max-width:320px){
     #sName{
@@ -158,6 +164,9 @@
         position: relative;
         top: 21px;
         left: -14px;
+    }
+    .songbanner{
+        display: none;
     }
 
 }
