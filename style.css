@@ -117,7 +117,7 @@
 .poster-box{
     display: inline-block;
     position: absolute;
-    bottom: 2vh;
+    bottom: 15px;
     right: 20vw;
     display: none;
 }
