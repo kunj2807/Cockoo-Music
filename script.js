@@ -26,7 +26,7 @@ songitem.forEach((element,i) => {
 masterPlay.addEventListener('click',()=>{
     if(audioElement.paused || audioElement.currentTime<=0){
         audioElement.play()
-        document.getElementById('sName').innerText=`${songs[songIndex].songName}`
+        document.getElementById('sName').innerText=`${songs[songIndex-1].songName}`
         masterPlay.classList.remove('fa-circle-play')
         masterPlay.classList.add('fa-circle-pause')
         document.getElementById('playingGif').style.opacity='1'
