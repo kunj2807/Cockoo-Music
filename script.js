@@ -103,13 +103,14 @@ function makeAllPlays(){
 
 // })
 document.getElementById('next').addEventListener('click',()=>{
-    if(songIndex>=8){
-        songIndex=1
+    if(songIndex>=7){
+        songIndex=0
     }
     else{
         songIndex+=1
     }
     makeAllPlays()
+    document.getElementById('playingGif').style.opacity='1'
     audioElement.src=`songs/${songIndex+1}.mp3`
     audioElement.currentTime=0
     audioElement.play()
@@ -118,8 +119,8 @@ document.getElementById('next').addEventListener('click',()=>{
     document.getElementById('poster').src=`${songs[songIndex].coverPath}`
     masterPlay.classList.remove('fa-circle-play')
     masterPlay.classList.add('fa-circle-pause')
-    document.getElementById(`${songIndex-1}`).classList.remove('fa-circle-play')
-    document.getElementById(`${songIndex-1}`).classList.add('fa-circle-pause')
+    document.getElementById(`${songIndex}`).classList.remove('fa-circle-play')
+    document.getElementById(`${songIndex}`).classList.add('fa-circle-pause')
 
 })
 document.getElementById('previous').addEventListener('click',()=>{
@@ -130,6 +131,7 @@ document.getElementById('previous').addEventListener('click',()=>{
     else{
         songIndex-=1
     }
+    document.getElementById('playingGif').style.opacity='1'
     makeAllPlays()
     audioElement.src=`songs/${songIndex+1}.mp3`
     audioElement.currentTime=0
